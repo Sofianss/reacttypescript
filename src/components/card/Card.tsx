@@ -1,4 +1,4 @@
-import SuperHero from "../models/SuperHero";
+import SuperHero from "../../models/SuperHero";
 import "./Card.css";
 
 type CardProps = {
