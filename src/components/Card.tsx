@@ -1,19 +1,19 @@
-import SuperHeros from "../models/SuperHeros";
+import SuperHero from "../models/SuperHero";
 import "./Card.css";
 
 type CardProps = {
-  superHeros: SuperHeros;
+  superHero: SuperHero;
 };
 
-const Card: React.FC<CardProps> = ({ superHeros }) => {
+const Card: React.FC<CardProps> = ({ superHero }) => {
   return (
     <div className="card">
-      <h1>{superHeros.name}</h1>
-      <img src={superHeros.image} alt="super héros"></img>
+      <h1>{superHero.name}</h1>
+      <img src={superHero.image} alt="super héros"></img>
       <div className="infos">
-        <p>Identité secrète : {superHeros.civil}</p>
-        <p>Age : {superHeros.age} ans</p>
-        <p>Habite à : {superHeros.ville}</p>
+        <p>Identité secrète : {superHero.civil}</p>
+        <p>Age : {superHero.age} ans</p>
+        <p>Habite à : {superHero.ville}</p>
       </div>
     </div>
   );

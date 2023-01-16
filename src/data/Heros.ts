@@ -1,6 +1,6 @@
-import Hero from "../models/SuperHeros";
+import SuperHero from "../models/SuperHero";
 
-const Heros: Hero[] = [
+const SuperHeros: SuperHero[] = [
   {
     id: 1,
     name: "Batman",
@@ -35,4 +35,4 @@ const Heros: Hero[] = [
     ville: "",
   },
 ];
-export default Heros;
+export default SuperHeros;
