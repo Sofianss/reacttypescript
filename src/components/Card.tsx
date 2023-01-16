@@ -1,15 +1,17 @@
-type CardProps = {
-  nom: string;
-  age?: number;
-};
+import Hero from "../models/Hero";
+import "./Card.css";
 
-const Card: React.FC<CardProps> = ({ nom, age }) => {
+const Card: React.FC<Hero> = ({ name, image, civil, age, ville }) => {
   return (
-    <>
-      <h1>Coucou</h1>
-      <h2>{nom}</h2>
-      <h3>{age}</h3>
-    </>
+    <div className="card">
+      <h1>{name}</h1>
+      <img src={image} alt="super héros"></img>
+      <div className="infos">
+        <p>Identité secrète : {civil || "inconnu"}</p>
+        <p>Age : {age || "inconnu"}</p>
+        <p>Habite à : {ville || "inconnu"}</p>
+      </div>
+    </div>
   );
 };
 export default Card;

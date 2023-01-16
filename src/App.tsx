@@ -1,10 +1,14 @@
 import React from "react";
 import "./App.css";
+import Card from "./components/Card";
+import Heros from "./data/Heros";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <h1>Coucou</h1>
+      {Heros.map((hero) => (
+        <Card {...hero} />
+      ))}
     </div>
   );
 };
