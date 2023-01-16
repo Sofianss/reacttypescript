@@ -1,12 +1,9 @@
-import "./App.css";
-import Count from "./components/count/Count";
-import HerosList from "./pages/HerosList";
+import Router from "./router/router";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <HerosList />
-      <Count />
+      <Router />
     </div>
   );
 };

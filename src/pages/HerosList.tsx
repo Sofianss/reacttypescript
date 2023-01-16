@@ -6,9 +6,7 @@ import SuperHero from "../models/SuperHero";
 const HerosList = () => {
   const [afficher, setAfficher] = useState<SuperHero[]>([]);
 
-  useEffect(() => {
-    setAfficher(SuperHeros);
-  }, []);
+  useEffect(() => setAfficher(SuperHeros), []);
 
   return (
     <>
