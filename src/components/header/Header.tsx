@@ -13,6 +13,9 @@ const Header: React.FC = () => {
       <Link to="/form">
         <h1>form</h1>
       </Link>
+      <Link to="/fetch">
+        <h1>get</h1>
+      </Link>
     </header>
   );
 };

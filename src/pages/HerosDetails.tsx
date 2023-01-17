@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import SuperHeros from "../data/SuperHeros";
 import SuperHero from "../models/SuperHero";
 import "../components/card/Card.css";
 
@@ -9,15 +8,10 @@ const HerosDetails: React.FC = () => {
   const { id } = useParams<string>();
 
   useEffect(() => {
-    if (id) {
-      SuperHeros.forEach((hero) => {
-        if (hero.id === +id) {
-          setAfficher(hero);
-        }
-      });
-    }
+    fetch(`http://localhost:3004/superHeros/${id}`)
+      .then((response) => response.json())
+      .then((data) => setAfficher(data));
   }, [id]);
-
   return (
     <>
       <div className="card">

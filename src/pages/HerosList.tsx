@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import Card from "../components/card/Card";
-import SuperHeros from "../data/SuperHeros";
 import SuperHero from "../models/SuperHero";
 
 const HerosList = () => {
   const [afficher, setAfficher] = useState<SuperHero[]>([]);
 
   useEffect(() => {
-    setAfficher(SuperHeros);
+    fetch("http://localhost:3004/superHeros")
+      .then((response) => response.json())
+      .then((data) => setAfficher(data));
   }, []);
 
   return (

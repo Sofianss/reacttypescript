@@ -1,5 +1,7 @@
 import { RouteObject, useRoutes } from "react-router";
 import Count from "../components/count/Count";
+import Get from "../components/fetch/Get";
+import GetId from "../components/fetch/GetId";
 import Form from "../components/form/Form";
 import HerosDetails from "../pages/HerosDetails";
 import HerosList from "../pages/HerosList";
@@ -21,6 +23,14 @@ const Router: React.FC = () => {
     {
       path: "/form",
       element: <Form />,
+    },
+    {
+      path: "/fetch",
+      element: <Get />,
+    },
+    {
+      path: "/fetch/:id",
+      element: <GetId />,
     },
   ];
   return <>{useRoutes(routes)}</>;
