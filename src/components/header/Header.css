@@ -1,0 +1,9 @@
+header {
+  background: black;
+  display: flex;
+  flex-direction: row;
+}
+header h1 {
+  color: white;
+  padding: 10px;
+}

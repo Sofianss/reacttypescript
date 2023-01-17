@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SuperHeros from "../data/SuperHeros";
 import SuperHero from "../models/SuperHero";
@@ -20,9 +20,6 @@ const HerosDetails: React.FC = () => {
 
   return (
     <>
-      <Link to="/">
-        <h1>Liste des héros</h1>
-      </Link>
       <div className="card">
         <h1>{afficher?.name}</h1>
         <img src={afficher?.image} alt={afficher?.name} />

@@ -7,9 +7,8 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = ({ superHero }) => {
-  let id = superHero.id;
   return (
-    <Link to={`/${id}`}>
+    <Link to={`/${superHero.id}`}>
       <div className="card">
         <h1>{superHero.name}</h1>
 
