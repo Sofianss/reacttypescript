@@ -10,6 +10,9 @@ const Header: React.FC = () => {
       <Link to="/count">
         <h1>Count</h1>
       </Link>
+      <Link to="/form">
+        <h1>form</h1>
+      </Link>
     </header>
   );
 };
