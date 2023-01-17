@@ -9,17 +9,18 @@ type CardProps = {
 const Card: React.FC<CardProps> = ({ superHero }) => {
   let id = superHero.id;
   return (
-    <div className="card">
-      <Link to={`/${id}`}>
+    <Link to={`/${id}`}>
+      <div className="card">
         <h1>{superHero.name}</h1>
-      </Link>
-      <img src={superHero.image} alt="super héros"></img>
-      <div className="infos">
-        <p>Identité secrète : {superHero.civil || "inconnu"}</p>
-        <p>Age : {superHero.age || "inconnu"}</p>
-        <p>Habite à : {superHero.ville || "inconnu"}</p>
+
+        <img src={superHero.image} alt="super héros"></img>
+        <div className="infos">
+          <p>Identité secrète : {superHero.civil || "inconnu"}</p>
+          <p>Age : {superHero.age || "inconnu"}</p>
+          <p>Habite à : {superHero.ville || "inconnu"}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 export default Card;
