@@ -7,6 +7,12 @@ const Router: React.FC = () => {
     {
       path: "/",
       element: <HerosList />,
+      children: [
+        {
+          path: "/:id",
+          element: <HerosList />,
+        },
+      ],
     },
     {
       path: "/count",
