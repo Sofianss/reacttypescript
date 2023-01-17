@@ -7,6 +7,9 @@ const Header: React.FC = () => {
       <Link to="/">
         <h1>Liste des héros</h1>
       </Link>
+      <Link to="/count">
+        <h1>Count</h1>
+      </Link>
     </header>
   );
 };
