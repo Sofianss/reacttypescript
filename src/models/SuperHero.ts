@@ -1,5 +1,5 @@
 export default class SuperHero {
-  id?: number;
+  id: number;
   name: string;
   image: string;
   civil: string;

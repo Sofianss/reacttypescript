@@ -1,5 +1,6 @@
 import { RouteObject, useRoutes } from "react-router";
 import Count from "../components/count/Count";
+import HerosDetails from "../pages/HerosDetails";
 import HerosList from "../pages/HerosList";
 
 const Router: React.FC = () => {
@@ -7,12 +8,10 @@ const Router: React.FC = () => {
     {
       path: "/",
       element: <HerosList />,
-      children: [
-        {
-          path: "/:id",
-          element: <HerosList />,
-        },
-      ],
+    },
+    {
+      path: "/:id",
+      element: <HerosDetails />,
     },
     {
       path: "/count",
