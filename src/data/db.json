@@ -49,12 +49,20 @@
       "id": 6
     },
     {
-      "name": "Sable Blaireau",
-      "image": "https://cdn.pixabay.com/photo/2016/12/07/05/51/pokemon-1888657_1280.png",
-      "civil": "Sablaireau",
-      "age": "42",
-      "ville": "Uldum",
+      "name": "jack ceparou",
+      "image": "https://avatars.githubusercontent.com/u/25733885?v=4",
+      "civil": "jack sparrow du pauvre",
+      "age": "43",
+      "ville": "olydri",
       "id": 7
+    },
+    {
+      "name": "PyroBarbare",
+      "image": "https://i.pinimg.com/564x/61/3f/18/613f18e556cab334aea8db39d4e74be5.jpg",
+      "civil": "bob lennon",
+      "age": "40",
+      "ville": "avec billy",
+      "id": 8
     }
   ]
 }

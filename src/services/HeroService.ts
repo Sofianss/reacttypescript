@@ -36,6 +36,15 @@ export default class HeroService {
       .catch((error) => this.error(error));
   }
 
+  public static deleteHeros(hero: SuperHero): Promise<{}> {
+    return fetch(`http://localhost:3004/superHeros/${hero.id}`, {
+      method: "DELETE",
+      headers: { "content-type": "application/json" },
+    })
+      .then((response) => response.json())
+      .catch((error) => this.error(error));
+  }
+
   private static isEmpty(data: Object): boolean {
     return Object.keys(data).length === 0;
   }

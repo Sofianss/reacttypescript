@@ -14,6 +14,7 @@ const HerosDetails: React.FC = () => {
       HeroService.getHerosById(+id).then((hero) => setAfficher(hero));
     }
   }, [id]);
+
   return (
     <>
       {afficher?.id ? (

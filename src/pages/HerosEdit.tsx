@@ -18,7 +18,7 @@ const HerosEdit: React.FC = () => {
       {hero?.id ? (
         <>
           <h2>Editer: {hero.name}:</h2>
-          <HerosForm hero={hero}></HerosForm>
+          <HerosForm hero={hero} edit={true}></HerosForm>
         </>
       ) : (
         <h2>Ce héros n'existe pas</h2>

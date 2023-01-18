@@ -7,11 +7,12 @@ export default class SuperHero {
   ville: string;
 
   constructor(
-    name: string,
-    image: string,
-    civil: string,
-    age: number,
-    ville: string
+    id: number = 0,
+    name: string = "",
+    image: string = "",
+    civil: string = "",
+    age: number = 0,
+    ville: string = ""
   ) {
     this.name = name;
     this.image = image;
