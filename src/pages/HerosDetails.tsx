@@ -3,15 +3,16 @@ import { useEffect, useState } from "react";
 import SuperHero from "../models/SuperHero";
 import "../components/card/Card.css";
 import { FiEdit } from "react-icons/fi";
+import HeroService from "../services/HeroService";
 
 const HerosDetails: React.FC = () => {
   const [afficher, setAfficher] = useState<SuperHero>();
   const { id } = useParams<string>();
 
   useEffect(() => {
-    fetch(`http://localhost:3004/superHeros/${id}`)
-      .then((response) => response.json())
-      .then((data) => setAfficher(data));
+    if (id) {
+      HeroService.getHerosById(+id).then((hero) => setAfficher(hero));
+    }
   }, [id]);
   return (
     <>

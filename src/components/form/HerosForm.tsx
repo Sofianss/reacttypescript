@@ -1,6 +1,7 @@
 import SuperHero from "../../models/SuperHero";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import HeroService from "../../services/HeroService";
 
 type HerosFormProps = {
   hero: SuperHero;
@@ -49,8 +50,11 @@ const HerosForm: React.FC<HerosFormProps> = ({ hero }) => {
 
   const soumission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(form);
-    redirection(`/${hero.id}`);
+    hero.name = form.name.value;
+    hero.age = form.age.value;
+    hero.civil = form.civil.value;
+    hero.ville = form.ville.value;
+    HeroService.updateHero(hero).then(() => redirection(`/${hero.id}`));
   };
 
   return (

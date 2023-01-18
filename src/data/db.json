@@ -26,11 +26,11 @@
     },
     {
       "id": 4,
-      "name": "Spider cochon",
+      "name": "Spider Cochon",
       "image": "https://www.simpsonspark.com/images/persos/contributions/spider-cochon-22627.jpg",
-      "civil": "",
-      "age": null,
-      "ville": ""
+      "civil": " Cochon d'homer",
+      "age": "100",
+      "ville": "Springfield"
     }
   ]
 }
