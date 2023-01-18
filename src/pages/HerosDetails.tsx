@@ -16,18 +16,24 @@ const HerosDetails: React.FC = () => {
   }, [id]);
   return (
     <>
-      <div className="card">
-        <h1>{afficher?.name}</h1>
-        <img src={afficher?.image} alt={afficher?.name} />
-        <Link to={`/edit/${id}`}>
-          <FiEdit />
-        </Link>
-        <div className="infos">
-          <p>{afficher?.civil}</p>
-          <p>{afficher?.age}</p>
-          <p>{afficher?.ville}</p>
-        </div>
-      </div>
+      {afficher?.id ? (
+        <>
+          <div className="card">
+            <h1>{afficher?.name}</h1>
+            <img src={afficher?.image} alt={afficher?.name} />
+            <Link to={`/edit/${id}`}>
+              <FiEdit />
+            </Link>
+            <div className="infos">
+              <p>{afficher?.civil}</p>
+              <p>{afficher?.age}</p>
+              <p>{afficher?.ville}</p>
+            </div>
+          </div>
+        </>
+      ) : (
+        <h1>Ce héros n'existe pas</h1>
+      )}
     </>
   );
 };
