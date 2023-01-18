@@ -4,6 +4,7 @@ import Count from "../components/count/Count";
 import Get from "../components/fetch/Get";
 import GetId from "../components/fetch/GetId";
 import Form from "../components/form/Form";
+import HerosCreate from "../pages/HerosCreate";
 
 import HerosDetails from "../pages/HerosDetails";
 import HerosEdit from "../pages/HerosEdit";
@@ -38,6 +39,10 @@ const Router: React.FC = () => {
     {
       path: "/edit/:id",
       element: <HerosEdit />,
+    },
+    {
+      path: "/create",
+      element: <HerosCreate />,
     },
   ];
   return <>{useRoutes(routes)}</>;

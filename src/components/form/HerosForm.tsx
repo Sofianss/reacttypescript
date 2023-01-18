@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import HeroService from "../../services/HeroService";
 
 type HerosFormProps = {
-  hero: SuperHero;
+  hero?: SuperHero;
 };
 
 type Champs = {
@@ -18,24 +18,29 @@ type Form = {
   civil: Champs;
   age: Champs;
   ville: Champs;
+  image?: Champs;
 };
 
 const HerosForm: React.FC<HerosFormProps> = ({ hero }) => {
   const [form, setForm] = useState<Form>({
     name: {
-      value: hero.name,
+      value: hero?.name || "",
       isValid: true,
     },
     civil: {
-      value: hero.civil,
+      value: hero?.civil || "",
       isValid: true,
     },
     age: {
-      value: hero.age,
+      value: hero?.age || 0,
       isValid: true,
     },
     ville: {
-      value: hero.ville,
+      value: hero?.ville || "",
+      isValid: true,
+    },
+    image: {
+      value: hero?.image || "",
       isValid: true,
     },
   });
@@ -50,16 +55,41 @@ const HerosForm: React.FC<HerosFormProps> = ({ hero }) => {
 
   const soumission = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    hero.name = form.name.value;
-    hero.age = form.age.value;
-    hero.civil = form.civil.value;
-    hero.ville = form.ville.value;
-    HeroService.updateHero(hero).then(() => redirection(`/${hero.id}`));
+    const name: string = form.name.value;
+    const age: number = form.age.value;
+    const civil: string = form.civil.value;
+    const ville: string = form.ville.value;
+
+    if (hero) {
+      hero.name = name;
+      hero.age = age;
+      hero.civil = civil;
+      hero.ville = ville;
+      HeroService.updateHero(hero).then(() => redirection(`/${hero.id}`));
+    } else {
+      const image = form.image?.value;
+      HeroService.createHero(
+        new SuperHero(name, image, civil, age, ville)
+      ).then(() => redirection(`/`));
+    }
   };
 
   return (
     <form onSubmit={soumission}>
-      <img src={hero.image} alt={hero.name} />
+      <img src={hero?.image || ""} alt={hero?.name || ""} />
+      {!hero ? (
+        <>
+          <label htmlFor="image">Image: </label>
+          <input
+            type="text"
+            name="image"
+            value={form.image?.value}
+            onChange={editHeros}
+          />
+        </>
+      ) : (
+        <></>
+      )}
 
       <label htmlFor="name">Nom: </label>
       <input

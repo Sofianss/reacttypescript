@@ -26,11 +26,21 @@ export default class HeroService {
       .catch((error) => this.error(error));
   }
 
+  public static async createHero(hero: SuperHero): Promise<SuperHero> {
+    return fetch(`http://localhost:3004/superHeros/`, {
+      method: "POST",
+      body: JSON.stringify(hero),
+      headers: { "content-type": "application/json" },
+    })
+      .then((response) => response.json())
+      .catch((error) => this.error(error));
+  }
+
   private static isEmpty(data: Object): boolean {
     return Object.keys(data).length === 0;
   }
 
   private static error(error: Error): void {
-    console.log(error);
+    console.error(error);
   }
 }

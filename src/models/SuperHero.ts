@@ -1,5 +1,5 @@
 export default class SuperHero {
-  id: number;
+  id?: number;
   name: string;
   image: string;
   civil: string;
@@ -7,14 +7,12 @@ export default class SuperHero {
   ville: string;
 
   constructor(
-    id: number,
     name: string,
     image: string,
     civil: string,
     age: number,
     ville: string
   ) {
-    this.id = id;
     this.name = name;
     this.image = image;
     this.civil = civil;

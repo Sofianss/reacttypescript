@@ -16,6 +16,9 @@ const Header: React.FC = () => {
       <Link to="/fetch">
         <h1>get</h1>
       </Link>
+      <Link to="/create">
+        <h1>create</h1>
+      </Link>
     </header>
   );
 };

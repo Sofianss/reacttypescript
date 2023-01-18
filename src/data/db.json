@@ -31,6 +31,30 @@
       "civil": " Cochon d'homer",
       "age": "100",
       "ville": "Springfield"
+    },
+    {
+      "id": 5,
+      "name": "GrosKachu",
+      "image": "https://cdn.pixabay.com/photo/2020/07/21/16/10/pokemon-5426712_1280.png",
+      "civil": "le meilleur pokemon ?",
+      "age": "25",
+      "ville": "sdf"
+    },
+    {
+      "name": "rebeu deter",
+      "image": "https://cdn.pixabay.com/photo/2020/09/04/07/59/character-5543218_1280.png",
+      "civil": "carapuce",
+      "age": "3",
+      "ville": "sufokia",
+      "id": 6
+    },
+    {
+      "name": "Sable Blaireau",
+      "image": "https://cdn.pixabay.com/photo/2016/12/07/05/51/pokemon-1888657_1280.png",
+      "civil": "Sablaireau",
+      "age": "42",
+      "ville": "Uldum",
+      "id": 7
     }
   ]
 }
